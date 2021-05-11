@@ -1,0 +1,345 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	max-width: 740px;
+	max-height: 416px;
+	min-width: 320px;
+	min-height: 180px;
+}
+body {
+	position: relative;
+	overflow: hidden;
+	-webkit-font-smoothing: antialiased;
+}
+*, *:before, *:after {
+	outline:none;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration:none;
+}
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('subset-HelveticaNeueCyr-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+video {
+	transform: translate(-20%);
+	height: 416px;
+	@media(max-width: 740px){
+    	height: 57.2vw;
+	}
+}
+
+.banner {
+	display: flex;
+	position: relative;
+	overflow: hidden;
+	// aspect: 740 x 416
+	// height = 416 * 100 / 740
+	height: 56.2163vw;
+	max-height: 416px;
+	min-height: 180px;
+
+	margin: 0 auto;
+	border: 1px solid #dadada;
+	background-size: 100%;
+}
+.left {
+	position: relative;
+	max-width: 420px;
+	min-width: 170px;
+	max-height: 415px;
+	min-height: 180px;
+	width: 100%;
+	height: 100%;
+	background-image: url('img/back.png');
+    background-size: 138%;
+    background-position: 14% 41%;
+	background-repeat: no-repeat;
+	@keyframes pulse{
+		0%{
+			transform: scale(.6);
+			opacity: 0;
+		}
+		50%{
+			transform: scale(.9);
+			opacity: 0;
+		}
+		60%{
+			transform: scale(1.1);opacity: .6;
+		}
+
+		70%{
+			transform: scale(1.3);opacity: .85;
+		}
+		80%{
+			transform: scale(1.4);opacity: .6;
+		}
+		100%{
+			transform: scale(1.6);opacity: 0;
+		}
+	}
+	&-button {
+	    position: absolute;
+	    margin: auto;
+		display: block;
+	    width: 14.5%;
+	    height:14.5%;
+	    border-radius: 100px;
+		background-image: url('img/button.png');
+		background-position: center;
+		background-size: 50%;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		transition: 0.2s linear;
+		z-index: 1000;
+	}
+}
+
+.YellowArrowc {
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	width: 30%;
+	z-index: 20;
+	opacity: 0;
+}
+.RedArrowc {
+	position: absolute;
+	top: 40%;
+	right: 10%;
+	width: 30%;
+	z-index: 20;
+	opacity: 0;
+} 
+.BlueArrowc {
+	position: absolute;
+	top: 35%;
+	left: 0%;
+	width: 50%;
+	z-index: 20;
+	opacity: 0.2;
+}
+.left-button-red {
+	background-color: #db2521;
+	top: 43%;
+	left: 78%;
+	opacity: 0;
+	&:after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		border: 3px solid rgba(219, 37, 33, 0.1);
+		animation: pulse 1.5s linear infinite;
+		border-radius: 999px;
+		box-shadow: inset 0px 0px 15px 10px rgba( 219, 37, 33, 0.6);
+	}
+}
+
+.left-button-yellow {
+	background-color: #e3b014;
+	top: 34%;
+	left: 60%;
+	opacity: 0;
+	&:after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		border: 3px solid rgba(227, 176, 20, 0.1);
+		animation: pulse 1.5s linear infinite;
+		border-radius: 999px;
+		box-shadow: inset 0px 0px 15px 10px rgba(227, 176, 20, 0.6);
+	}
+}
+.left-button-blue{
+  background-color: #1e82cd;
+  top: 43%;
+  left: 7%;
+  opacity: 0;
+  &:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	border: 3px solid rgba(30, 30, 205, 0.1);
+	animation: pulse 1.5s linear infinite;
+	border-radius: 999px;
+	box-shadow: inset 0px 0px 15px 10px rgba(30, 30, 205, 0.6);
+	}
+}
+.btn-active {
+	//transition: 0.2s ease-out 1.5s;
+	opacity: 1;	
+}
+.arrow{
+	opacity: 0;
+}
+.right {
+	max-width: 320px;
+	min-width: 150px;
+	max-height: 415px;
+	min-height: 180px;
+	width: 100%;
+	height: 100%;
+	background: #f4eee2;
+	@media(max-width: 740px) {
+		width: 80vw;
+	}
+}
+.logo {
+	margin-top: 50px;
+	margin-left: 25px;
+	min-width: 80px;
+	@media(max-width: 740px) {
+		width: 23vw;
+		margin-top: 7vw;
+		margin-left: 4vw;
+	}
+}
+.logo-min {
+	@media(max-width: 740px) {
+		width: 6.216vw;
+		height: 3.514vw;
+	}
+}
+#logo-min {
+	> image {
+		@media(max-width: 740px) {
+			width: 6.216vw;
+			height: 3.514vw;
+		}
+	}}
+.text {
+	margin-top: 20px;
+	margin-left: 25px;
+	max-width: 270px;
+	color: #1c1637;
+	&-1 {
+		font-family: 'SBPCirce-Bold';
+		font-size: 32px;
+		line-height: 37px;
+		@media(max-width: 740px) { 
+			font-size: 4.324vw;
+			line-height: 5vw;
+		}
+	}
+	&-2 {
+		margin-top: 4%;
+		font-family: 'SBPCirce-Regular';
+		font-size: 19px;
+		line-height: 21px;
+		@media(max-width: 740px) { 
+			font-size: 2.568vw;
+			line-height: 2.838vw;
+		}
+	}
+	&-3 {
+		margin-top: 4%;
+		font-family: 'SBPCirce-Regular';
+		font-size: 13px;
+		line-height: 14px;
+		text-transform: uppercase;
+		@media(max-width: 740px) { 
+			font-size: 1.757vw;
+			line-height: 1.892vw;
+		}
+	}
+	@media(max-width: 740px) {
+		margin-top: 3vw;
+		margin-left: 4vw;
+	}
+}
+.push-1 {
+	position: absolute;
+    left: 40%;
+	opacity: 0;
+	top: 50%;
+	transition: 0.2s ease-out;
+	&-text {
+		font-family: 'SBPCirce-Regular';
+		font-size: 10px;
+		@media(max-width: 740px) {
+			font-size: 1.351vw;
+		}
+		@media(max-width: 500px) {
+			text-transform: uppercase;
+			font-size: 1.8vw;
+		}
+	}
+	&-bold {
+		font-family: 'SBPCirce-Bold';
+		font-size: 18px;
+		@media(max-width: 740px) {
+			font-size: 2.432vw;
+		}
+		@media(max-width: 500px) {
+			text-transform: uppercase;
+			font-size: 3vw;
+		}
+	}
+	&-top {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100px;
+		height: 47px;
+		background: white;
+		border-radius: 4px 4px 0 0;
+		@media(max-width: 740px) {
+			width: 13.5vw;
+			height: 6.2vw;
+		}
+	}
+
+	&-bottom {
+    	position: absolute;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		padding: 25% 0;
+		width: 100px;
+		height: 90px;
+		border-radius: 0 0 4px 4px;
+  		background-image: linear-gradient( 90deg, rgb(1,197,109) 0%, rgb(48,229,149) 100%);
+		> p {
+			color: white;
+		}
+		@media(max-width: 740px) {
+			width: 13.5vw;
+			height: 12.6vw;
+		}
+	}
+}
+@font-face {
+    font-family: 'SBPCirce-Regular';
+    src: url('font/SBPCirce-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'SBPCirce-Bold';
+    src: url('font/SBPCirce-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'SBPCirce-Light';
+    src: url('font/SBPCirce-Light.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
